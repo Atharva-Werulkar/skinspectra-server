@@ -1,0 +1,8 @@
+flask
+joblib
+matplotlib
+gunicorn
+xgboost
+librosa
+tensorflow
+pydub
