@@ -1,4 +1,5 @@
 flask
+opencv-python
 joblib
 matplotlib
 gunicorn
@@ -6,4 +7,3 @@ xgboost
 librosa
 tensorflow
 pydub
-opencv-python
