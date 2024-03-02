@@ -6,4 +6,4 @@ xgboost
 librosa
 tensorflow
 pydub
-cv2
+opencv
