@@ -5,7 +5,7 @@ import joblib
 import os
 
 # Load your ML model (replace with your specific model loading code)
-model = joblib.load('model.h5')
+model = cv2.dnn_DetectionModel('model.h5')
 
 app = Flask(__name__)
 
