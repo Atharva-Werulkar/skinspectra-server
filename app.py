@@ -5,7 +5,7 @@ import joblib
 import os
 
 # Load your ML model (replace with your specific model loading code)
-model = cv2.dnn_DetectionModel('model.h5')
+model = cv2.dnn_DetectionModel('model.h5','label.txt')
 
 app = Flask(__name__)
 
@@ -24,13 +24,13 @@ def detect_disease():
     image_array = np.expand_dims(image_array, axis=0)  # Example adding a batch dimension
 
     # Make predictions using your model
-    class_ids, confidences = model.detect(image_array, confThreshold=0.5)
+    class_ids, confidences ,bboxes = model.detect(image_array, confThreshold=0.5)
 
     if len(class_ids) == 0:
         return jsonify({'prediction': 'No disease detected'})
 
     # Extract class labels from your model's configuration (replace as needed)
-    with open('path/to/your/labels.txt', 'r') as f:
+    with open('label.txt', 'r') as f:
         labels = f.read().rstrip().split('\n')
 
     predicted_class = labels[int(class_ids[0][0])]
